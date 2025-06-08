@@ -6,7 +6,7 @@ const App = () => {
   return (
     <>
       <Header />
-     {/* <Carousel />/}
+      <Carousel /> 
       {/* Cards e Footer virão a seguir */}
     </>
   );
