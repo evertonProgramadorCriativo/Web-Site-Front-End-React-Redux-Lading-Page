@@ -19,9 +19,11 @@ const carouselSlice = createSlice({
     prevSlide: (state) => {
       state.currentIndex =
         (state.currentIndex - 1 + state.items.length) % state.items.length;
+    }, setSlide: (state, action) => {
+      state.currentIndex = action.payload;
     }
   }
 });
 
-export const { nextSlide, prevSlide } = carouselSlice.actions;
+export const { nextSlide, prevSlide, setSlide } = carouselSlice.actions;
 export default carouselSlice.reducer;
