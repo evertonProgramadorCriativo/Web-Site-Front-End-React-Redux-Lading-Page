@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import './InfoCards.css';
 
-const InfoCards = () => {
+const InfoSection = () => {
   const cards = useSelector((state) => state.infoCards.cards);
 
   return (
@@ -18,7 +18,7 @@ const InfoCards = () => {
   );
 };
 
-export default InfoCards;
+export default InfoSection;
 
 
 {/*

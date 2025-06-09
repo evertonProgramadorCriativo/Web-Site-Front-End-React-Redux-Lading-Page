@@ -5,8 +5,7 @@ import { nextSlide, prevSlide, setSlide } from '../redux/carouselSlice';
 import './Carousel.css';
 
 const Carousel = () => {
-  const currentIndex = useSelector((state) => state.carousel.currentIndex);
-  const slides = useSelector((state) => state.carousel.items);
+  const { items, currentIndex } = useSelector((state) => state.carousel);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,21 +15,28 @@ const Carousel = () => {
     return () => clearInterval(interval);
   }, [dispatch]);
 
+  const currentSlide = items[currentIndex];
+
   return (
     <div className="carousel">
       <button className="arrow left" onClick={() => dispatch(prevSlide())}>
         &#10094;
       </button>
+
       <div className="slide">
-        <h2>{slides[currentIndex].title}</h2>
-        <p>{slides[currentIndex].content}</p>
+        <img src={currentSlide.image} alt={currentSlide.title} className="slide-image" />
+        <div className="slide-text">
+          <h2>{currentSlide.title}</h2>
+          <p>{currentSlide.content}</p>
+        </div>
       </div>
+
       <button className="arrow right" onClick={() => dispatch(nextSlide())}>
         &#10095;
       </button>
 
       <div className="dots">
-        {slides.map((_, idx) => (
+        {items.map((_, idx) => (
           <span
             key={idx}
             className={`dot ${currentIndex === idx ? 'active' : ''}`}
