@@ -10,7 +10,7 @@
  
 Esta landing page apresenta uma empresa especializada em soluções tecnológicas, **oferecendo serviços como** **Suporte Premium**, **Segurança de Dados**  **e** **Produtos Digitais** de e-commerce desenvolvido com **Node.js (Express)**, **MongoDB** e frontend em **JavaScript puro**.  
 
-![Texto Alternativo](https://i.ibb.co/JWNLMgXC/react-js-redux.png) 
+![Landing Page React.js Redux](https://i.ibb.co/qYVj4XpN/Screenshot-234.png) 
 
 ## 📌 Rodando o Projeto 
    ```bash
