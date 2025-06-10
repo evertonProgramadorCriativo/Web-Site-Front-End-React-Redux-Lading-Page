@@ -1,3 +1,27 @@
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+a:hover {
+  color: #aaa;
+}
+
+.cart-link {
+  position: relative;
+}
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -14px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -27,7 +51,7 @@
 .nav-links a:hover {
   text-decoration: underline;
 }
-
+ 
 
 @media (max-width: 900px) {
   .navbar {
