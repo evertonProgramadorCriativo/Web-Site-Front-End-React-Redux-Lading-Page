@@ -14,9 +14,10 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+           <Route path="/carrinho" element={<Carrinho />} />
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/carrinho" element={<Carrinho />} />
+         
         </Routes>
       </main>
       <Footer />

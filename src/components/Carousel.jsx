@@ -1,4 +1,4 @@
-// src/components/Carousel.jsx
+ 
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { nextSlide, prevSlide, setSlide } from '../redux/carouselSlice';
