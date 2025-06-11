@@ -1,4 +1,37 @@
-import React from 'react';
+  import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { clearCart } from '../redux/cartSlice'; // certifique-se que essa action existe
+import './Pagamento.css';
+
+const Pagamento = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleConfirmPayment = () => {
+    dispatch(clearCart());
+    navigate('/pedido-confirmado');
+  };
+
+  return (
+    <div className="pagamento-container">
+      <h2>Pagamento via PIX</h2>
+      <p>Use o QR Code abaixo para concluir o pagamento:</p>
+      <div className="qr-code">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=chave-pix-exemplo" alt="QR Code PIX" />
+      </div>
+      <p className="info">Após o pagamento, clique no botão abaixo:</p>
+      <button onClick={handleConfirmPayment} className="confirmar-pagamento">Já paguei</button>
+    </div>
+  );
+};
+
+export default Pagamento;
+
+  
+  
+  // tesntando pix
+  /** import React from 'react';
 import { useSelector } from 'react-redux';
 import './Pagamento.css';
 
@@ -8,6 +41,8 @@ const Pagamento = () => {
   const total = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
 
   // Exemplo de montagem do código PIX com valor
+
+ 
   const chavePix = 'contato@empresa.com';
   const nome = 'Empresa Exemplo';
   const cidade = 'SAO PAULO';
@@ -30,3 +65,4 @@ const Pagamento = () => {
 };
 
 export default Pagamento;
+  **/ 

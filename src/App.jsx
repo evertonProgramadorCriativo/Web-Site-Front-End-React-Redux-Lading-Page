@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Carrinho from './pages/Carrinho';
 import Footer from './components/Footer';
 import Pagamento from './components/Pagamento';
+import PedidoConfirmado from './components/PedidoConfirmado';
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/login" element={<Login />} />
          <Route path="/pagamento" element={<Pagamento />} />
+         <Route path="/pedido-confirmado" element={<PedidoConfirmado />} />
         </Routes>
       </main>
       <Footer />
