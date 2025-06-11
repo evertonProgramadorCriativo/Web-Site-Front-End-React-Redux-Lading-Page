@@ -22,17 +22,16 @@
 }
 
 .produto-card button {
-  background-color: #1a1a1a;
+ background-color: var(--color-secondary);
   color: white;
-  border: none;
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .produto-card button:hover {
-  background-color: #333;
+  background-color: #3e8e41;
 }
 .notificacao-carrinho {
   background-color: #28a745; /* verde */
