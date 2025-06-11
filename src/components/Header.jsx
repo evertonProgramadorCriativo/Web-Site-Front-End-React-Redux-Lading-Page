@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+
 import './Header.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../redux/authSlice';
 
 const Header = () => {
     const cartQuantity = useSelector((state) =>
     state.cart.items.reduce((total, item) => total + item.quantity, 0)
+    
   );
+  const user = useSelector((state) => state.auth.user);
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const dispatch = useDispatch();
   return (
     <header className="header">
       <nav className="navbar">
@@ -17,6 +23,14 @@ const Header = () => {
           🛒 Carrinho
           {cartQuantity > 0 && <span className="cart-count">{cartQuantity}</span>}
         </Link>
+        {isAuthenticated ? (
+          <>
+            <span>Olá, {user.username}</span>
+            <button onClick={() => dispatch(logout())}>Sair</button>
+          </>
+        ) : (
+          <a href="/login">Login</a>
+        )}
       </nav>
     </header>
   );
