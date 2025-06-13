@@ -8,6 +8,8 @@ import Carrinho from './pages/Carrinho';
 import Footer from './components/Footer';
 import Pagamento from './components/Pagamento';
 import PedidoConfirmado from './components/PedidoConfirmado';
+import OfereceServicos from './pages/OfereceServicos';
+
 function App() {
   return (
     <Router>
@@ -19,6 +21,7 @@ function App() {
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/login" element={<Login />} />
          <Route path="/pagamento" element={<Pagamento />} />
+         <Route path="/oferece" element={<OfereceServicos />} />
          <Route path="/pedido-confirmado" element={<PedidoConfirmado />} />
         </Routes>
       </main>
